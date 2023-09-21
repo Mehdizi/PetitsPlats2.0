@@ -9,9 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500&display=swap"
+      rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -43,25 +45,47 @@
       </div>
     </header>
     <main>
-      <div class="main-filter-wrapper">
-        <form action="get">
-          <select name="ingredient" id="ingredient">
-          </select>
-          <select name="appliance" id="appliance">
-          </select>
-          <select name="utensil" id="utensil">
-          </select>
+      <div class="wrapper-filter-recipe_number">
+        <div class="main-filter-wrapper">
+          <form action="get">
+            <select name="ingredient" id="ingredient">
+              <option value="ingrédients">ingrédients</option>
+            </select>
+            <select name="appliance" id="appliance">
+              <option value="appareils">appareils</option>
+            </select>
+            <select name="utensil" id="utensil">
+              <option value="ustensiles ">ustensiles</option>
+            </select>
+          </form>
+          <!-- <div class="test">
+            test
+            <div class="selection-test">
+              <input type="text" />
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <span>5</span>
+            </div>
+          </div> -->
+        </div>
+        <div class="recipe_number"></div>
       </div>
+      <div class="selected-filter-wrapper"></div>
+
       <section class="main-section-wrapper"></section>
     </main>
-    <script src="data/recipes.js"></script>
     <script src="scripts/utils/createDomElement.js"></script>
+    <script src="scripts/features/closeSelectedFilter.js"></script>
+    <script src="scripts/features/createSelectedFilter.js"></script>
+    <script src="scripts/features/filters.js"></script>
+    <script src="data/recipes.js"></script>
+    <script src="scripts/features/createRecipeNumber.js"></script>
     <script src="scripts/features/createRecipeCardFeed.js"></script>
-    <script src="scripts/functions/getRecipe.js"></script>
-    <script src="scripts/features/filterByIngredient.js"></script>
-    <script src="scripts/features/filterByUtensils.js"></script>
-    <script src="scripts/features/filtredByAppliance.js"></script>
-    <script src="scripts/features/searchBar.js"></script>
+    <script src="scripts/features/createIngredientsFilter.js"></script>
+    <script src="scripts/features/createUstensilsFilter.js"></script>
+    <script src="scripts/features/createAppliancesFilter.js"></script>
     <script src="scripts/index.js"></script>
   </body>
 </html>

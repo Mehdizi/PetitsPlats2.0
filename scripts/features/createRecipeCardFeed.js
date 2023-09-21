@@ -37,7 +37,7 @@ const createRecipeCard = (recipe) => {
   const ingredient = createDomElement("span", {
     class: "ingredient",
   });
-  ingredient.innerText = "Ingredient";
+  ingredient.innerText = "Ingrédients";
   const ingredientWrapper = createDomElement("div", {
     class: "ingredient-wrapper",
   });
@@ -65,6 +65,11 @@ const createRecipeCard = (recipe) => {
     ingredientWrapper.append(ingredientDescriptionWrapper);
   });
 
+  const appliancesList = createDomElement("div", { class: "appliances-list" });
+  const ustensilsList = createDomElement("div", { class: "ustensils-list" });
+  appliancesList.innerText = "appareils" + " " + recipe.appliance;
+  ustensilsList.innerText = "ustensiles" + " " + recipe.ustensils;
+
   mainIngredientWrapper.append(ingredient, ingredientWrapper);
 
   mainSectionWrapper.append(recipeCard);
@@ -72,7 +77,9 @@ const createRecipeCard = (recipe) => {
     recipePicture,
     recipeTitle,
     divRecipeWrapper,
-    mainIngredientWrapper
+    mainIngredientWrapper,
+    appliancesList,
+    ustensilsList
   );
 };
 
@@ -80,6 +87,7 @@ const displayRecipe = () => {
   recipes.forEach((recipe) => {
     createRecipeCard(recipe);
   });
+  countRecipeNumber();
 };
 
 displayRecipe();
