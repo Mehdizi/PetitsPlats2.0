@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css" type="text/css" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/header.css" type="text/css" />
+    <link rel="stylesheet" href="css/filters.css" type="text/css" />
+    <link rel="stylesheet" href="css/selectedItems.css" type="text/css" />
+    <link rel="stylesheet" href="css/recipesCard.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500&display=swap"
       rel="stylesheet" />
@@ -46,43 +47,71 @@
     <main>
       <div class="wrapper-filter-recipe_number">
         <div class="main-filter-wrapper">
-          <form action="get">
-            <select name="ingredient" id="ingredient">
-              <option value="ingrédients">ingrédients</option>
-            </select>
-            <select name="appliance" id="appliance">
-              <option value="appareils">appareils</option>
-            </select>
-            <select name="utensil" id="utensil">
-              <option value="ustensiles ">ustensiles</option>
-            </select>
-            <select class="selectpicker" data-live-search="true">
-              <option data-tokens="ketchup mustard">
-                Hot Dog, Fries and a Soda
-              </option>
-              <option data-tokens="mustard">Burger, Shake and a Smile</option>
-              <option data-tokens="frosting">
-                Sugar, Spice and all things nice
-              </option>
-            </select>
-          </form>
+          <div class="second-filter-wrapper">
+            <div class="filter-wrapper-ingredient" id="ingredient">
+              <div class="filter-name-wrapper">
+                <p class="filter-name">Ingrédients</p>
+                <div class="filter-arrow-ingredient"></div>
+              </div>
+              <div class="filter-content">
+                <div class="filter-content-input">
+                  <input class="filter-ingredient-input" type="text" />
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <ul class="ingredient-filter-items"></ul>
+              </div>
+            </div>
+
+            <div class="filter-wrapper-appliance" id="appliance">
+              <div class="filter-name-wrapper">
+                <p class="filter-name">Appareils</p>
+                <div class="filter-arrow-appliance"></div>
+              </div>
+              <div class="filter-content">
+                <div class="filter-content-input">
+                  <input class="filter-appliance-input" type="text" />
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <ul class="appliance-filter-items"></ul>
+              </div>
+            </div>
+
+            <div class="filter-wrapper-ustensil" id="ustensil">
+              <div class="filter-name-wrapper">
+                <p class="filter-name">Ustensiles</p>
+                <div class="filter-arrow-ustensil"></div>
+              </div>
+              <div class="filter-content">
+                <div class="filter-content-input">
+                  <input class="filter-ustensil-input" type="text" />
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <ul class="ustensil-filter-items"></ul>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="recipe_number"></div>
       </div>
+
       <div class="selected-filter-wrapper"></div>
 
       <section class="main-section-wrapper"></section>
     </main>
-    <script src="scripts/utils/createDomElement.js"></script>
-    <script src="scripts/features/closeSelectedFilter.js"></script>
-    <script src="scripts/features/createSelectedFilter.js"></script>
-    <script src="scripts/features/filters.js"></script>
+
     <script src="data/recipes.js"></script>
+    <script src="scripts/utils/createDomElement.js"></script>
+    <script src="scripts/features/createIngredientsFilter.js"></script>
+    <script src="scripts/features/filterPredicates.js"></script>
+    <script src="scripts/features/createFiltersTag.js"></script>
+    <script src="scripts/features/suggestedSearch.js"></script>
+    <script src="scripts/features/searchRecipes.js"></script>
     <script src="scripts/features/createRecipeNumber.js"></script>
     <script src="scripts/features/createRecipeCardFeed.js"></script>
-    <script src="scripts/features/createIngredientsFilter.js"></script>
     <script src="scripts/features/createUstensilsFilter.js"></script>
     <script src="scripts/features/createAppliancesFilter.js"></script>
+    <script src="scripts/features/openFilters.js"></script>
     <script src="scripts/index.js"></script>
   </body>
 </html>

@@ -1,18 +1,34 @@
-const applianceFilter = () => {
-  const filterAppliance = document.querySelector("#appliance");
-  const applianceList = [];
+const applianceFilter = document.querySelector("#appliance");
+
+const filterAppliance = (recipes) => {
+  const appliancesList = [];
   recipes.forEach((recipe) => {
     applianceLowerCase = recipe.appliance.toLowerCase();
-    if (applianceList.includes(applianceLowerCase)) {
-    } else {
-      applianceList.push(applianceLowerCase);
+    if (!appliancesList.includes(applianceLowerCase)) {
+      appliancesList.push(applianceLowerCase);
     }
+    options.appliance;
+    appliancesList.forEach((app) => {
+      let index = appliancesList.indexOf(options.appliance);
+      if (index !== -1) {
+        appliancesList.splice(index, 1);
+      }
+    });
   });
-  applianceList.forEach((element) => {
-    const appliance = createDomElement("option", { value: element });
-    appliance.innerText = element;
-    filterAppliance.append(appliance);
-  });
+  return appliancesList;
 };
 
-applianceFilter();
+const displayAppliancesList = (appliancesList) => {
+  const applianceFilterItems = document.querySelector(
+    ".appliance-filter-items"
+  );
+  applianceFilterItems.innerHTML = "";
+  appliancesList.forEach((appli) => {
+    const applianceItem = createDomElement("li", {
+      value: appli,
+      class: "filter-option",
+    });
+    applianceItem.innerText = appli;
+    applianceFilterItems.append(applianceItem);
+  });
+};

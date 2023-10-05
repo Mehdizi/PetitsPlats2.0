@@ -1,0 +1,41 @@
+.selected-filter-wrapper {
+  max-width: 1290px;
+  width: 90%;
+  margin: 25px 75px 0 75px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.selected-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.875rem;
+  text-transform: capitalize;
+  width: 170px;
+  padding: 17px 16px 17px 16px;
+  background-color: #ffd15b;
+  border-radius: 10px;
+  height: auto;
+}
+
+.selected-filter i {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .selected-filter-wrapper {
+    margin: 0 auto;
+    padding-top: 30px;
+    align-items: center;
+    gap: 15px;
+  }
+  .selected-filter {
+    width: 100px;
+    font-size: 0.75rem;
+  }
+}

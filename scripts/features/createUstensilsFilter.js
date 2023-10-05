@@ -1,23 +1,34 @@
-const utensilsFilter = () => {
-  const filterUtensils = document.querySelector("#utensil");
-  const utensilList = [];
+const ustensilFilter = document.querySelector("#ustensil");
+
+const filterUstensil = (recipes) => {
+  const ustensilsList = [];
   recipes.forEach((recipe) => {
-    recipe.ustensils.forEach((utensil) => {
-      let utensilLowerCase = utensil.toLowerCase();
-      //   console.log("ustensils : ", utensilLowerCase);
-      if (utensilList.includes(utensilLowerCase)) {
-      } else if (utensilLowerCase.endsWith("(6)")) {
-        return utensilLowerCase.slice(0, -3);
-      } else {
-        utensilList.push(utensilLowerCase);
+    recipe.ustensils.forEach((ustensil) => {
+      const utensilLowerCase = ustensil.toLowerCase();
+      if (!ustensilsList.includes(utensilLowerCase)) {
+        ustensilsList.push(utensilLowerCase);
       }
+      const ustensilsToRemove = options.ustensils;
+      ustensilsToRemove.forEach((i) => {
+        let index = ustensilsList.indexOf(i);
+        if (index !== -1) {
+          ustensilsList.splice(index, 1);
+        }
+      });
     });
   });
-  utensilList.forEach((element) => {
-    const utensil = createDomElement("option", { value: element });
-    utensil.innerText = element;
-    filterUtensils.append(utensil);
-  });
+  return ustensilsList;
 };
 
-utensilsFilter();
+const displayUstentilsList = (ustensilsList) => {
+  const ustentilFilterItems = document.querySelector(".ustensil-filter-items");
+  ustentilFilterItems.innerHTML = "";
+  ustensilsList.forEach((ust) => {
+    const ustensilItem = createDomElement("li", {
+      value: ust,
+      class: "filter-option",
+    });
+    ustensilItem.innerText = ust;
+    ustentilFilterItems.append(ustensilItem);
+  });
+};

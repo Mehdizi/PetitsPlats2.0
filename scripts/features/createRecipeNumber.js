@@ -1,19 +1,12 @@
-const countRecipeNumber = () => {
+const displayCountRecipeNumber = (recipes) => {
   const recipeNumber = document.querySelector(".recipe_number");
-  const visibleRecipe = document.querySelectorAll(".main-article-wrapper");
-  let counter = 0;
-  visibleRecipe.forEach((recipe) => {
-    if (window.getComputedStyle(recipe).display === "flex") {
-      counter += 1;
-      if (counter <= 1) {
-        recipeNumber.innerText = "0" + counter + " recette";
-      }
-      if (counter > 1 && counter < 10) {
-        recipeNumber.innerText = "0" + counter + " recettes";
-      }
-      if (counter > 9) {
-        recipeNumber.innerText = counter + " recettes";
-      }
-    }
-  });
+  if (recipes.length === 0 || recipes.length === 1) {
+    recipeNumber.innerText = "0" + recipes.length + " recette";
+  }
+  if (recipes.length > 1 && recipes.length < 10) {
+    recipeNumber.innerText = "0" + recipes.length + " recettes";
+  }
+  if (recipes.length >= 10) {
+    recipeNumber.innerText = recipes.length + " recettes";
+  }
 };

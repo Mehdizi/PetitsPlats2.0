@@ -65,11 +65,6 @@ const createRecipeCard = (recipe) => {
     ingredientWrapper.append(ingredientDescriptionWrapper);
   });
 
-  const appliancesList = createDomElement("div", { class: "appliances-list" });
-  const ustensilsList = createDomElement("div", { class: "ustensils-list" });
-  appliancesList.innerText = "appareils" + " " + recipe.appliance;
-  ustensilsList.innerText = "ustensiles" + " " + recipe.ustensils;
-
   mainIngredientWrapper.append(ingredient, ingredientWrapper);
 
   mainSectionWrapper.append(recipeCard);
@@ -77,17 +72,14 @@ const createRecipeCard = (recipe) => {
     recipePicture,
     recipeTitle,
     divRecipeWrapper,
-    mainIngredientWrapper,
-    appliancesList,
-    ustensilsList
+    mainIngredientWrapper
   );
 };
 
-const displayRecipe = () => {
-  recipes.forEach((recipe) => {
+const displayRecipe = (selectedRecipe) => {
+  const mainSectionWrapper = document.querySelector(".main-section-wrapper");
+  mainSectionWrapper.innerHTML = "";
+  selectedRecipe.forEach((recipe) => {
     createRecipeCard(recipe);
   });
-  countRecipeNumber();
 };
-
-displayRecipe();
