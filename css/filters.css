@@ -16,6 +16,7 @@
 }
 
 .main-filter-wrapper {
+  cursor: pointer;
   z-index: 1;
   display: flex;
   gap: 30px;
@@ -97,7 +98,6 @@
   z-index: 1;
   height: auto;
   width: 90%;
-  cursor: pointer;
   overflow: auto;
   padding-bottom: 0;
 }

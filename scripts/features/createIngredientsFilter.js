@@ -1,6 +1,5 @@
 const ingredientFilter = document.querySelector("#ingredient");
 
-// Créer un tableau de filtres sans duplication
 const filterIngredient = (recipes) => {
   const ingredientList = [];
   recipes.forEach((recipe) => {
@@ -21,7 +20,6 @@ const filterIngredient = (recipes) => {
   return ingredientList;
 };
 
-// T'as une fonction pour créer la carte
 const displayIngredientsList = (ingredientsList) => {
   const ingredientFilterItems = document.querySelector(
     ".ingredient-filter-items"

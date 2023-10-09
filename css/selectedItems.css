@@ -8,6 +8,10 @@
   gap: 30px;
 }
 
+.selected-filter::first-letter {
+  text-transform: uppercase;
+}
+
 .selected-filter {
   display: flex;
   justify-content: space-between;

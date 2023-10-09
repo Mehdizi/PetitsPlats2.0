@@ -8,12 +8,10 @@ const filterAppliance = (recipes) => {
       appliancesList.push(applianceLowerCase);
     }
     options.appliance;
-    appliancesList.forEach((app) => {
-      let index = appliancesList.indexOf(options.appliance);
-      if (index !== -1) {
-        appliancesList.splice(index, 1);
-      }
-    });
+    let index = appliancesList.indexOf(options.appliance);
+    if (index !== -1) {
+      appliancesList.splice(index, 1);
+    }
   });
   return appliancesList;
 };

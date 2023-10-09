@@ -1,6 +1,5 @@
 const createRecipeCard = (recipe) => {
   const mainSectionWrapper = document.querySelector(".main-section-wrapper");
-
   const divPreparationTime = createDomElement("div", {
     class: "div-preparation-time",
   });
@@ -11,7 +10,6 @@ const createRecipeCard = (recipe) => {
   const recipeCard = createDomElement("article", {
     class: "main-article-wrapper",
   });
-
   recipeCard.append(divPreparationTime);
   const recipePicture = createDomElement("img", {
     class: "recipe-img",
@@ -30,7 +28,6 @@ const createRecipeCard = (recipe) => {
   });
   recipeDescription.innerText = recipe.description;
   divRecipeWrapper.append(recipes, recipeDescription);
-
   const mainIngredientWrapper = createDomElement("div", {
     class: "main-ingredient-wrapper",
   });
@@ -41,7 +38,6 @@ const createRecipeCard = (recipe) => {
   const ingredientWrapper = createDomElement("div", {
     class: "ingredient-wrapper",
   });
-
   recipe.ingredients.forEach((ingr) => {
     if (ingr.unit === undefined) {
       ingr.unit = "";
@@ -60,13 +56,10 @@ const createRecipeCard = (recipe) => {
       class: "ingredient-quantity",
     });
     ingredientQuantity.innerText = ingr.quantity + " " + ingr.unit;
-
     ingredientDescriptionWrapper.append(ingredientName, ingredientQuantity);
     ingredientWrapper.append(ingredientDescriptionWrapper);
   });
-
   mainIngredientWrapper.append(ingredient, ingredientWrapper);
-
   mainSectionWrapper.append(recipeCard);
   recipeCard.append(
     recipePicture,
