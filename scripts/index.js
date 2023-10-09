@@ -23,17 +23,26 @@ const displayActualizedRecipes = () => {
 };
 
 const sortList = (list) => {
-  return list.sort();
+  for (let i = 0; i < list.length - 1; i++) {
+    for (let j = 0; j < list.length - i - 1; j++) {
+      if (list[j] > list[j + 1]) {
+        const tempIndex = list[j];
+        list[j] = list[j + 1];
+        list[j + 1] = tempIndex;
+      }
+    }
+  }
+  return list;
 };
 
 const singularize = (list) => {
   const singularizeList = [];
-  list.forEach((elem) => {
+  for (const elem of list) {
     const singularForm = elem.slice(0, -1);
     if (!list.includes(singularForm)) {
       singularizeList.push(elem);
     }
-  });
+  }
   return singularizeList;
 };
 

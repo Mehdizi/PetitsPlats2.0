@@ -18,13 +18,13 @@ const displayFiltersTag = (tag) => {
 
 const deleteFiltersTag = (tag) => {
   const tagsToDelete = document.querySelectorAll(".selected-filter");
-  tagsToDelete.forEach((tagToDelete) => {
+  for (const tagToDelete of tagsToDelete) {
     const tagToDeleteLowerCase = tagToDelete.innerText.toLowerCase();
     if (tagToDeleteLowerCase === tag) {
       tagToDelete.remove();
       deleteInOptions(tagToDeleteLowerCase);
     }
-  });
+  }
 };
 
 const deleteInOptions = (tag) => {
@@ -70,7 +70,7 @@ const isItAvailable = (e, element) => {
   const optionAvailable = document.querySelectorAll(
     `.filter-option-${element}`
   );
-  optionAvailable.forEach((opt) => {
+  for (const opt of optionAvailable) {
     const optionItemText = opt.innerText.toLowerCase();
     console.log("opt :", optionItemText);
     if (!optionItemText.includes(inputSearchBar)) {
@@ -78,5 +78,5 @@ const isItAvailable = (e, element) => {
     } else {
       opt.style.display = "flex";
     }
-  });
+  }
 };

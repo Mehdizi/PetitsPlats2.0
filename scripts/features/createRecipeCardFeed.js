@@ -41,8 +41,7 @@ const createRecipeCard = (recipe) => {
   const ingredientWrapper = createDomElement("div", {
     class: "ingredient-wrapper",
   });
-
-  recipe.ingredients.forEach((ingr) => {
+  for (const ingr of recipe.ingredients) {
     if (ingr.unit === undefined) {
       ingr.unit = "";
     }
@@ -60,10 +59,9 @@ const createRecipeCard = (recipe) => {
       class: "ingredient-quantity",
     });
     ingredientQuantity.innerText = ingr.quantity + " " + ingr.unit;
-
     ingredientDescriptionWrapper.append(ingredientName, ingredientQuantity);
     ingredientWrapper.append(ingredientDescriptionWrapper);
-  });
+  }
 
   mainIngredientWrapper.append(ingredient, ingredientWrapper);
 
@@ -79,7 +77,7 @@ const createRecipeCard = (recipe) => {
 const displayRecipe = (selectedRecipe) => {
   const mainSectionWrapper = document.querySelector(".main-section-wrapper");
   mainSectionWrapper.innerHTML = "";
-  selectedRecipe.forEach((recipe) => {
+  for (const recipe of selectedRecipe) {
     createRecipeCard(recipe);
-  });
+  }
 };

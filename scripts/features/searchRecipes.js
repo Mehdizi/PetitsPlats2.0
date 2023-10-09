@@ -55,52 +55,73 @@ const onlyIngredientOptionDisable = (options) => {
 };
 
 const searchByOptions = ({ recipes, options }) => {
-  return recipes.filter((r) => {
+  const searchByOptionsArray = [];
+  for (let i = 0; i < recipes.length; i++) {
+    const r = recipes[i];
     if (allOptionsAreEnabled(options)) {
-      return (
+      if (
         isInIngredient({
           currentRecipeIngredients: r.ingredients,
           userIngredientsOptions: options.ingredients,
         }) &&
         isInAppliance(r.appliance, options.appliance) &&
         isInUstensils(r.ustensils, options.ustensils)
-      );
+      ) {
+        searchByOptionsArray.push(r);
+      }
     }
     if (onlyIngredientOptionEnabled(options)) {
-      return isInIngredient({
-        currentRecipeIngredients: r.ingredients,
-        userIngredientsOptions: options.ingredients,
-      });
+      if (
+        isInIngredient({
+          currentRecipeIngredients: r.ingredients,
+          userIngredientsOptions: options.ingredients,
+        })
+      ) {
+        searchByOptionsArray.push(r);
+      }
     }
     if (onlyApplianceOptionEnabled(options)) {
-      return isInAppliance(r.appliance, options.appliance);
+      if (isInAppliance(r.appliance, options.appliance)) {
+        searchByOptionsArray.push(r);
+      }
     }
     if (onlyUstensilOptionEnabled(options)) {
-      return isInUstensils(r.ustensils, options.ustensils);
+      if (isInUstensils(r.ustensils, options.ustensils)) {
+        searchByOptionsArray.push(r);
+      }
     }
     if (onlyUstensilOptionDisable(options)) {
-      return (
+      if (
         isInIngredient({
           currentRecipeIngredients: r.ingredients,
           userIngredientsOptions: options.ingredients,
-        }) && isInAppliance(r.appliance, options.appliance)
-      );
+        }) &&
+        isInAppliance(r.appliance, options.appliance)
+      ) {
+        searchByOptionsArray.push(r);
+      }
     }
     if (onlyApplianceOptionDisable(options)) {
-      return (
+      if (
         isInIngredient({
           currentRecipeIngredients: r.ingredients,
           userIngredientsOptions: options.ingredients,
-        }) && isInUstensils(r.ustensils, options.ustensils)
-      );
+        }) &&
+        isInUstensils(r.ustensils, options.ustensils)
+      ) {
+        searchByOptionsArray.push(r);
+      }
     }
     if (onlyIngredientOptionDisable(options)) {
-      return (
+      if (
         isInAppliance(r.appliance, options.appliance) &&
         isInUstensils(r.ustensils, options.ustensils)
-      );
+      ) {
+        searchByOptionsArray.push(r);
+      }
     }
-  });
+  }
+  return searchByOptionsArray;
 };
 
 const filterRecipesBySearchTextAndOptions = ({ recipes, input, options }) => {

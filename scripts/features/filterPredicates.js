@@ -11,23 +11,39 @@ const isInDescription = (recipeDescription, input) => {
 };
 
 const isInIngredientByText = (recipeIngredients, input) => {
-  return recipeIngredients.some((i) => {
-    return i.ingredient.toLowerCase().includes(input.toLowerCase());
-  });
+  for (let i = 0; i < recipeIngredients.length; i++) {
+    if (
+      recipeIngredients[i].ingredient
+        .toLowerCase()
+        .includes(input.toLowerCase())
+    ) {
+      return true;
+    }
+  }
 };
 
 const isInIngredient = ({
   currentRecipeIngredients,
   userIngredientsOptions,
 }) => {
-  return userIngredientsOptions.every((i) => {
-    return currentRecipeIngredients.some((ingr) => {
-      return isValidSearch({
-        searchedByUser: i,
-        itemToCompare: ingr.ingredient,
-      });
-    });
-  });
+  for (let i = 0; i < userIngredientsOptions.length; i++) {
+    const userIngredient = userIngredientsOptions[i];
+    let found = false;
+    for (let y = 0; y < currentRecipeIngredients.length; y++) {
+      const currentIngredient = currentRecipeIngredients[y].ingredient;
+      if (
+        isValidSearch({
+          searchedByUser: userIngredient,
+          itemToCompare: currentIngredient,
+        })
+      ) {
+        found = true;
+        break;
+      }
+    }
+    if (!found) return false;
+  }
+  return true;
 };
 
 const isInAppliance = (recipeAppliance, input) => {
@@ -38,14 +54,24 @@ const isInAppliance = (recipeAppliance, input) => {
 };
 
 const isInUstensils = (recipeUstensils, userUstensilsOptions) => {
-  return userUstensilsOptions.every((ustOpt) => {
-    return recipeUstensils.some((ustensil) => {
-      return isValidSearch({
-        searchedByUser: ustOpt,
-        itemToCompare: ustensil,
-      });
-    });
-  });
+  for (let i = 0; i < userUstensilsOptions.length; i++) {
+    const userUstensil = userUstensilsOptions[i];
+    let found = false;
+    for (let y = 0; y < recipeUstensils.length; y++) {
+      const currentUstensil = recipeUstensils[y];
+      if (
+        isValidSearch({
+          searchedByUser: userUstensil,
+          itemToCompare: currentUstensil,
+        })
+      ) {
+        found = true;
+        break;
+      }
+    }
+    if (!found) return false;
+  }
+  return true;
 };
 
 const isSearchedByText = (recipe, input) => {
@@ -57,11 +83,13 @@ const isSearchedByText = (recipe, input) => {
 };
 
 const filterRecipesBySearchText = ({ recipes, input }) => {
-  return recipes.filter((selectedRecipe) => {
-    if (isSearchedByText(selectedRecipe, input)) {
-      return selectedRecipe;
+  const newRecipeArray = [];
+  for (const recipe of recipes) {
+    if (isSearchedByText(recipe, input)) {
+      newRecipeArray.push(recipe);
     }
-  });
+  }
+  return newRecipeArray;
 };
 
 const areOptionsEnabled = (options) => {
