@@ -26,7 +26,7 @@ const displayAppliancesList = (appliancesList) => {
   appliancesList.forEach((appli) => {
     const applianceItem = createDomElement("li", {
       value: appli,
-      class: "filter-option",
+      class: "filter-option-appliance filter-option",
     });
     applianceItem.innerText = appli;
     applianceFilterItems.append(applianceItem);

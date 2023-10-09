@@ -7,7 +7,7 @@ let counterIngredient = 0;
 let counterAppliance = 0;
 let counterUstensil = 0;
 
-filterArrowIngredient.addEventListener("click", () => {
+ingredientFilter.addEventListener("click", () => {
   if (counterIngredient === 0) {
     ingredientFilter.classList.add("filter-wrapper-open");
     filterArrowIngredient.classList.add("filter-arrow-open");
@@ -19,7 +19,7 @@ filterArrowIngredient.addEventListener("click", () => {
   }
 });
 
-filterArrowAppliance.addEventListener("click", () => {
+applianceFilter.addEventListener("click", () => {
   if (counterAppliance === 0) {
     applianceFilter.classList.add("filter-wrapper-open");
     filterArrowAppliance.classList.add("filter-arrow-open");
@@ -31,7 +31,7 @@ filterArrowAppliance.addEventListener("click", () => {
   }
 });
 
-filterArrowUstensil.addEventListener("click", () => {
+ustensilFilter.addEventListener("click", () => {
   if (counterUstensil === 0) {
     ustensilFilter.classList.add("filter-wrapper-open");
     filterArrowUstensil.classList.add("filter-arrow-open");

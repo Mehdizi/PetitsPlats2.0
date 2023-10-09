@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: row;
   gap: 30px;
-  position: absolute;
+  position: relative;
 }
 
 .filter-wrapper-appliance,
@@ -133,11 +133,28 @@
   border-radius: 10px;
   padding: 4px;
   list-style-type: none;
-  text-transform: capitalize;
+}
+
+.filter-option::first-letter {
+  text-transform: uppercase;
 }
 
 .filter-option:hover {
   background-color: #ffd15b;
+}
+
+.position-filter-ingredient {
+  position: absolute;
+}
+
+.position-filter-appliance {
+  position: absolute;
+  left: 230px;
+}
+
+.position-filter-ustensil {
+  position: absolute;
+  left: 460px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -153,6 +170,7 @@
     flex-direction: column;
     align-items: baseline;
     gap: 30px;
+    margin: 0 50px;
   }
   .filter-wrapper-ingredient,
   .filter-wrapper-appliance,
@@ -166,6 +184,12 @@
   .recipe_number {
     font-size: 1.125rem;
   }
+  .position-filter-appliance {
+    left: 160px;
+  }
+  .position-filter-ustensil {
+    left: 320px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -177,9 +201,23 @@
     align-items: center;
     height: 80%;
   }
+  .main-filter-wrapper {
+    margin-bottom: 0;
+  }
   .second-filter-wrapper {
     position: relative;
     flex-direction: column;
     gap: 10px;
+  }
+  .position-filter-ingredient {
+    position: relative;
+  }
+  .position-filter-appliance {
+    position: relative;
+    left: 0;
+  }
+  .position-filter-ustensil {
+    position: relative;
+    left: 0;
   }
 }

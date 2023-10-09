@@ -51,20 +51,32 @@ const searchBarIngredient = document.querySelector(".filter-ingredient-input");
 const searchBarAppliance = document.querySelector(".filter-appliance-input");
 const searchBarUstensil = document.querySelector(".filter-ustensil-input");
 
-searchBarIngredient.addEventListener("input", (event) => {
-  let inputSearchBar = event.target.value.toLowerCase();
-  console.log(inputSearchBar);
+searchBarIngredient.addEventListener("input", (e) => {
+  isItAvailable(e, (element = "ingredient"));
+});
+
+searchBarAppliance.addEventListener("input", (e) => {
+  isItAvailable(e, (element = "appliance"));
+});
+
+searchBarUstensil.addEventListener("input", (e) => {
+  isItAvailable(e, (element = "ustensil"));
+});
+
+const isItAvailable = (e, element) => {
+  let inputSearchBar = e.target.value.toLowerCase();
+  console.log("input research :", inputSearchBar);
 
   const optionAvailable = document.querySelectorAll(
-    ".filter-option-ingredient"
+    `.filter-option-${element}`
   );
   optionAvailable.forEach((opt) => {
     const optionItemText = opt.innerText.toLowerCase();
-    console.log("opt :", opt.innerText);
+    console.log("opt :", optionItemText);
     if (!optionItemText.includes(inputSearchBar)) {
-      opt.style.display === "none";
+      opt.style.display = "none";
     } else {
-      opt.style.display === "flex";
+      opt.style.display = "flex";
     }
   });
-});
+};

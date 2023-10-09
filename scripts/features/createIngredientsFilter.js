@@ -16,7 +16,6 @@ const filterIngredient = (recipes) => {
           }
         });
       }
-      //   retirer les s en fin de mot pour les doublons spécifiquement
     });
   });
   return ingredientList;
@@ -30,7 +29,7 @@ const displayIngredientsList = (ingredientsList) => {
   ingredientFilterItems.innerHTML = "";
   ingredientsList.forEach((ingr) => {
     const ingredientItem = createDomElement("li", {
-      class: "filter-option-ingredient",
+      class: "filter-option-ingredient filter-option",
       value: ingr,
     });
     ingredientItem.innerText = ingr;

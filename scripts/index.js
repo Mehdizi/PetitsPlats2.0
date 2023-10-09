@@ -26,8 +26,21 @@ const sortList = (list) => {
   return list.sort();
 };
 
+const singularize = (list) => {
+  const singularizeList = [];
+  list.forEach((elem) => {
+    const singularForm = elem.slice(0, -1);
+    if (!list.includes(singularForm)) {
+      singularizeList.push(elem);
+    }
+  });
+  return singularizeList;
+};
+
 const displayActualizeFilters = () => {
-  displayIngredientsList(sortList(filterIngredient(actualizeRecipes())));
+  displayIngredientsList(
+    singularize(sortList(filterIngredient(actualizeRecipes())))
+  );
   displayAppliancesList(sortList(filterAppliance(actualizeRecipes())));
   displayUstentilsList(sortList(filterUstensil(actualizeRecipes())));
 };
@@ -65,7 +78,7 @@ ustentilFilterItems.addEventListener("click", (e) => {
 const init = () => {
   displayRecipe(recipes);
   displayCountRecipeNumber(recipes);
-  displayIngredientsList(sortList(filterIngredient(recipes)));
+  displayIngredientsList(singularize(sortList(filterIngredient(recipes))));
   displayAppliancesList(sortList(filterAppliance(recipes)));
   displayUstentilsList(sortList(filterUstensil(recipes)));
 };

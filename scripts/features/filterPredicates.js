@@ -1,5 +1,5 @@
 const isValidSearch = ({ searchedByUser, itemToCompare }) => {
-  return itemToCompare.toLowerCase() === searchedByUser.toLowerCase();
+  return itemToCompare.toLowerCase().includes(searchedByUser.toLowerCase());
 };
 
 const isInName = (recipeName, input) => {

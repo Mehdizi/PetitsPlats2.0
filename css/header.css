@@ -70,6 +70,10 @@
   justify-content: center;
 }
 
+.header-input-wrapper button:hover {
+  background-color: #ffd15b;
+}
+
 .header-input-wrapper button i {
   display: flex;
   justify-content: center;
