@@ -71,7 +71,6 @@ ingredientFilterItems.addEventListener("click", (e) => {
 applianceFilterItems.addEventListener("click", (e) => {
   options.appliance = e.target.textContent;
   displayFiltersTag(e.target.textContent);
-
   displayActualizedRecipes();
   displayActualizeFilters();
 });
@@ -79,7 +78,6 @@ applianceFilterItems.addEventListener("click", (e) => {
 ustentilFilterItems.addEventListener("click", (e) => {
   options.ustensils.push(e.target.textContent);
   displayFiltersTag(e.target.textContent);
-
   displayActualizedRecipes();
   displayActualizeFilters();
 });

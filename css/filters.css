@@ -36,7 +36,6 @@
 .filter-wrapper-ustensil {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   padding: 17px 16px;
   background-color: #ffffff;
   border-radius: 11px;
@@ -64,6 +63,7 @@
 .filter-name-wrapper {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .filter-name {
@@ -97,7 +97,6 @@
   z-index: 1;
   height: auto;
   width: 90%;
-  cursor: pointer;
   overflow: auto;
   padding-bottom: 0;
 }

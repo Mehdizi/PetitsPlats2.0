@@ -1,6 +1,5 @@
 const createRecipeCard = (recipe) => {
   const mainSectionWrapper = document.querySelector(".main-section-wrapper");
-
   const divPreparationTime = createDomElement("div", {
     class: "div-preparation-time",
   });
@@ -62,9 +61,7 @@ const createRecipeCard = (recipe) => {
     ingredientDescriptionWrapper.append(ingredientName, ingredientQuantity);
     ingredientWrapper.append(ingredientDescriptionWrapper);
   }
-
   mainIngredientWrapper.append(ingredient, ingredientWrapper);
-
   mainSectionWrapper.append(recipeCard);
   recipeCard.append(
     recipePicture,

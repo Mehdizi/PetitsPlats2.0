@@ -13,7 +13,6 @@ const filterAppliance = (recipes) => {
       appliancesList.splice(index, 1);
     }
   }
-
   return appliancesList;
 };
 

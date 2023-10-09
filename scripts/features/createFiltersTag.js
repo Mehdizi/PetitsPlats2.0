@@ -76,7 +76,7 @@ const isItAvailable = (e, element) => {
     if (!optionItemText.includes(inputSearchBar)) {
       opt.style.display = "none";
     } else {
-      opt.style.display = "flex";
+      opt.style.display = "block";
     }
   }
 };

@@ -3,11 +3,16 @@ const filterArrowIngredient = document.querySelector(
 );
 const filterArrowAppliance = document.querySelector(".filter-arrow-appliance");
 const filterArrowUstensil = document.querySelector(".filter-arrow-ustensil");
+
+ingredientFilterName = document.querySelector("#ingredient-name");
+ustensilFilterName = document.querySelector("#ustensil-name");
+applianceFilterName = document.querySelector("#appliance-name");
+
 let counterIngredient = 0;
 let counterAppliance = 0;
 let counterUstensil = 0;
 
-ingredientFilter.addEventListener("click", () => {
+ingredientFilterName.addEventListener("click", () => {
   if (counterIngredient === 0) {
     ingredientFilter.classList.add("filter-wrapper-open");
     filterArrowIngredient.classList.add("filter-arrow-open");
@@ -19,7 +24,7 @@ ingredientFilter.addEventListener("click", () => {
   }
 });
 
-applianceFilter.addEventListener("click", () => {
+applianceFilterName.addEventListener("click", () => {
   if (counterAppliance === 0) {
     applianceFilter.classList.add("filter-wrapper-open");
     filterArrowAppliance.classList.add("filter-arrow-open");
@@ -31,7 +36,7 @@ applianceFilter.addEventListener("click", () => {
   }
 });
 
-ustensilFilter.addEventListener("click", () => {
+ustensilFilterName.addEventListener("click", () => {
   if (counterUstensil === 0) {
     ustensilFilter.classList.add("filter-wrapper-open");
     filterArrowUstensil.classList.add("filter-arrow-open");
