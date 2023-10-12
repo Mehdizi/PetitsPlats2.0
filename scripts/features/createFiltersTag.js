@@ -65,14 +65,11 @@ searchBarUstensil.addEventListener("input", (e) => {
 
 const isItAvailable = (e, element) => {
   let inputSearchBar = e.target.value.toLowerCase();
-  console.log("input research :", inputSearchBar);
-
   const optionAvailable = document.querySelectorAll(
     `.filter-option-${element}`
   );
   for (const opt of optionAvailable) {
     const optionItemText = opt.innerText.toLowerCase();
-    console.log("opt :", optionItemText);
     if (!optionItemText.includes(inputSearchBar)) {
       opt.style.display = "none";
     } else {

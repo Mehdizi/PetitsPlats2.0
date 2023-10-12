@@ -25,7 +25,6 @@ const displayUstentilsList = (ustensilsList) => {
   ustentilFilterItems.innerHTML = "";
   for (const ust of ustensilsList) {
     const ustensilItem = createDomElement("li", {
-      value: ust,
       class: "filter-option filter-option-ustensil",
     });
     ustensilItem.innerText = ust;

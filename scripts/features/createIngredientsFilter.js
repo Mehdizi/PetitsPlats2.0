@@ -30,7 +30,6 @@ const displayIngredientsList = (ingredientsList) => {
   for (const ingr of ingredientsList) {
     const ingredientItem = createDomElement("li", {
       class: "filter-option-ingredient filter-option",
-      value: ingr,
     });
     ingredientItem.innerText = ingr;
     ingredientFilterItems.append(ingredientItem);

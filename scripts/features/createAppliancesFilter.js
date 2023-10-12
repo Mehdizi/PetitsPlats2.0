@@ -23,7 +23,6 @@ const displayAppliancesList = (appliancesList) => {
   applianceFilterItems.innerHTML = "";
   for (const appli of appliancesList) {
     const applianceItem = createDomElement("li", {
-      value: appli,
       class: "filter-option-appliance filter-option",
     });
     applianceItem.innerText = appli;
