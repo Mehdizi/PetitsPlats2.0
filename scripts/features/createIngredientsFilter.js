@@ -28,7 +28,6 @@ const displayIngredientsList = (ingredientsList) => {
   ingredientsList.forEach((ingr) => {
     const ingredientItem = createDomElement("li", {
       class: "filter-option-ingredient filter-option",
-      value: ingr,
     });
     ingredientItem.innerText = ingr;
     ingredientFilterItems.append(ingredientItem);

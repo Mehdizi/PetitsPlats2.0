@@ -29,13 +29,12 @@
   height: 253px;
   border-radius: 21px 21px 0 0;
   object-fit: cover;
-  image-rendering: optimizeSpeed;
 }
 
 .recipe-title {
   font-family: "Anton", sans-serif;
   font-size: 1.125rem;
-  font-weight: 400px;
+  font-weight: 400;
   margin-left: 20px;
 }
 
