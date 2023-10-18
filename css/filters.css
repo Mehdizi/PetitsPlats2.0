@@ -16,7 +16,6 @@
 }
 
 .main-filter-wrapper {
-  cursor: pointer;
   z-index: 1;
   display: flex;
   gap: 30px;
@@ -37,7 +36,6 @@
 .filter-wrapper-ustensil {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   padding: 17px 16px;
   background-color: #ffffff;
   border-radius: 11px;
@@ -65,6 +63,7 @@
 .filter-name-wrapper {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .filter-name {
@@ -97,11 +96,12 @@
   gap: 7px;
   z-index: 1;
   height: auto;
-  width: 90%;
+  width: 100%;
   overflow: auto;
   padding-bottom: 0;
 }
 .filter-content-input {
+  position: relative;
   width: 100%;
   font-size: 1rem;
   font-family: "Manrope", sans-serif;
@@ -109,12 +109,16 @@
 }
 
 .filter-content-input input {
-  width: 90%;
-  margin-right: -1.5rem;
+  width: 96%;
   border: 0.5px solid #7a7a7a;
+  border-radius: 2px;
+  height: 36px;
 }
 .filter-content-input i {
-  font-size: 0.8rem;
+  position: absolute;
+  top: 33%;
+  right: 5%;
+  font-size: 1rem;
   color: #7a7a7a;
 }
 
@@ -189,6 +193,14 @@
   }
   .position-filter-ustensil {
     left: 320px;
+  }
+  .filter-content-input input {
+    height: 23px;
+    width: 94%;
+  }
+  .filter-content-input i {
+    right: 7%;
+    font-size: 0.625rem;
   }
 }
 
